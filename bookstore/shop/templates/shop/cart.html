@@ -1,0 +1,13 @@
+<h1>Your Cart</h1>
+
+{% if cart %}
+<ul>
+    {% for item in cart.items.all %}
+        <li>{{ item.book.title }} - {{ item.quantity }}</li>
+    {% endfor %}
+</ul>
+
+<b>Total: {{ cart.total_price }}$</b>
+{% else %}
+<p>Cart is empty</p>
+{% endif %}
